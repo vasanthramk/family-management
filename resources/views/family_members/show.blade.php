@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <h2>{{ $family->name }} {{ $family->surname }}</h2>
+    <img src="{{ asset('storage/'.$family->photo) }}" class="img-fluid rounded-circle" style="width: 200px; height: 200px; float:right;" align alt="Family Head Photo">
     <p><strong>Birthdate:</strong>{{ \Carbon\Carbon::parse($family->birthdate)->format('d/m/Y') }}</p>
     <p><strong>Mobile:</strong> {{ $family->mobile_no }}</p>
     <p><strong>Address:</strong> {{ $family->address }}, {{ $family->city }}, {{ $family->state }} - {{ $family->pincode }}</p>
