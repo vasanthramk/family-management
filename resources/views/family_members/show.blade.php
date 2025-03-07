@@ -79,7 +79,7 @@
                 @error('marital_status') <span class="text-danger">{{$message}}</span> @enderror
             </div>
             <div class="col-md-6 mb-3" id="weddingDateField" 
-            style="display: {{ old('marital_status', $member->marital_status) == 'unmarried' ? 'none' : 'block' }}; ">
+            style="display: {{ (old('marital_status') == 'unmarried' | old('marital_status') == '') ? 'none' : 'block' }}; ">
             
                 <label>Wedding Date</label>
                 <input type="date" name="wedding_date" value="{{ old('wedding_date') }}" class="form-control">
@@ -89,7 +89,7 @@
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label>Education</label>
-                <input type="text" name="education" value="{{ old('education') }} {{ old('photo') }}" class="form-control">
+                <input type="text" name="education" value="{{ old('education') }}" class="form-control">
                 @error('education') <span class="text-danger">{{$message}}</span> @enderror
             </div>
             <div class="col-md-6 mb-3">
@@ -105,8 +105,8 @@
 </div>
 
 <script>
-    document.getElementById('maritalStatus').addEventListener('change', function() {
-    document.getElementById('weddingDateField').style.display = (this.value === 'married') ? 'block' : 'none';
+    document.getElementById('maritalStatus').addEventListener('change', function() { alert(this.value);
+    document.getElementById('weddingDateField').style.display = (this.value == 'married') ? 'block' : 'none';
 
     window.onload = function() {
         document.getElementById('weddingDateField').style.display = none;
