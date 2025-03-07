@@ -17,7 +17,7 @@ use App\Http\Controllers\FamilyMemberController;
 
 //Route::get('/', function () {    return view('welcome');    });
 Route::get('/', function () {
-    return redirect()->route('families.index'); // Assuming 'families.index' is the correct route name
+    return redirect()->route('families.index'); 
 });
 
 Route::get('/families', [FamilyController::class, 'index'])->name('families.index');
