@@ -115,9 +115,6 @@ class FamilyMemberController extends Controller
         $family = Family::find($member->family_id);
         //dd($family);
         $familyMembers = FamilyMember::where('family_id', $member->family_id)->get();
-        //dd($familyMembers);
-        //$family=$member->family_id;
-        //return redirect()->route('families.show', $member->family_id, $familyMembers)->with('success', 'Family member deleted successfully.');
         return view('family_members.show', compact('family','familyMembers'));
     }
 }

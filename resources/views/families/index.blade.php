@@ -18,6 +18,7 @@
             </tr>
         </thead>
         <tbody>
+        @if($families && $families->count() > 0)
             @foreach($families as $family)
             <tr>
                 <td>{{ $family->name }} {{ $family->surname }}</td>
@@ -52,6 +53,9 @@
                 </td>
             </tr>
             @endforeach
+        @else
+            <tr> <td colspan='8'; align='center'>No Family Added</td></tr>
+        @endif
         </tbody>
     </table>
 </div>
