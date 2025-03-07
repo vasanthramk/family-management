@@ -79,7 +79,7 @@
                 @error('marital_status') <span class="text-danger">{{$message}}</span> @enderror
             </div>
             <div class="col-md-6 mb-3" id="weddingDateField" 
-            style="display: {{ old('marital_status', $member->marital_status) == 'unmarried' ? 'none' : 'block' }};">
+            style="display: {{ old('marital_status', $member->marital_status) == 'unmarried' ? 'none' : 'block' }}; ">
             
                 <label>Wedding Date</label>
                 <input type="date" name="wedding_date" value="{{ old('wedding_date') }}" class="form-control">
